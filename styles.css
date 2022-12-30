@@ -6,13 +6,35 @@ body {
   margin: 0;
 }
 
-.wrapper {}
+.wrapper {
+  
+}
 
 .inner {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: auto;
 }
+
+@media screen and (max-width: 1440px) {
+  .inner {
+    width: 1553px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .inner {
+    width: 1540px;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .inner {
+    width: 1436px;
+  }
+}
+
 
 header {
   display: flex;
@@ -117,33 +139,95 @@ section {
   border-bottom: 8px solid transparent;
 }
 
-.slide {
+.wrapper__slide {
+  max-width: 1353px;
+  height: 295px;
+  display: flex;
+  position: relative;
+  align-items: center;
+}
+
+.slide_topics {
   width: 1327px;
   height: 100%;
-  display: flex;
   color: #fff;
+  display: flex;
   justify-content: space-between;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.slide_topics a {
+  margin-left: 49px;
+}
+
+.slide_topics a:first-child {
+  margin-left: 0px;
+}
+
+.slide_mentors {
+  width: 1327px;
+  height: 100%;
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  overflow: hidden;
+  scroll-behavior: smooth;
+}
+
+.slide_mentors a {
+  margin-left: 49px;
+}
+
+.slide_mentors a:first-child {
+  margin-left: 0px;
 }
 
 .content {
   position: absolute;
-  bottom: 0;
-  left: 82px;
+  bottom: 20px;
+  width: 233px;
+  height: 82px;
+  font-size: 28px;
+  text-align: center;
 }
 
 .container {
   position: relative;
   color: #fff;
   font-size: 29px;
+  display: flex;
+  justify-content: center;
 }
 
 .footer__m {
-  position: relative;
-  width: 1440px;
+  overflow: hidden;
+  max-width: 1440px;
+  height: 450px;
+  display: flex;
+  justify-content: space-between;
+  scroll-behavior: smooth;
+}
+
+.footerContainer {
+  min-width: 1440px;
   height: 450px;
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+}
+
+.footerContainer img {
+  object-fit: cover;
+}
+
+.carousel {
+  position: relative;
+  max-width: 1440px;
+  height: 450px;
+  display: flex;
+  align-items: center;
 }
 
 .hinh_ngoi_sao {

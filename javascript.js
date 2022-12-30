@@ -1,36 +1,38 @@
 
-const data = [
-  {
-    link: './imgs/01ed8eb267ab5045d1eb442f5c402e5fd4953f3d.png',
-    content: 'cooking'
-  },
-  {
-    link: './imgs/01ed8eb267ab5045d1eb442f5c402e5fd4953f3d.png',
-    content: 'cooking'
-  },
-  {
-    link: './imgs/01ed8eb267ab5045d1eb442f5c402e5fd4953f3d.png',
-    content: 'cooking'
-  },
-  {
-    link: './imgs/01ed8eb267ab5045d1eb442f5c402e5fd4953f3d.png',
-    content: 'cooking'
-  },
-  {
-    link: './imgs/01ed8eb267ab5045d1eb442f5c402e5fd4953f3d.png',
-    content: 'cooking'
-  },
-  {
-    link: './imgs/01ed8eb267ab5045d1eb442f5c402e5fd4953f3d.png',
-    content: 'cooking'
-  },
-]
+const slide = document.querySelector(".slide_topics");
+const onClick = document.querySelector(".btnOnClick_topic");
+
+let firstImg = slide.querySelectorAll('a')[0];
+let firstImgWidth = firstImg.clientWidth + 49
+
+onClick.addEventListener("click", () => {
+  const result = () => slide.scrollLeft = slide.scrollLeft + firstImgWidth;
+  if (result() > (slide.clientWidth + 49))
+    slide.scrollLeft = 0;
+})
 
 
-const slide = document.querySelector('.slide');
-const listBox = document.querySelectorAll('.container');
-const btnOnClick = document.querySelector('.btnOnClick');
-const content = document.querySelectorAll('.content > p')
-const picture = document.querySelectorAll('.container > img')
+const slideMentors = document.querySelector(".slide_mentors");
+const btn = document.querySelector(".btnOnClick_mentors");
+
+let firstA = slide.querySelectorAll('a')[0];
+let firstA_Width = firstA.clientWidth + 49
+
+btn.addEventListener("click", () => {
+  const result = () => slideMentors.scrollLeft = slideMentors.scrollLeft + firstA_Width;
+  if (result() > (slideMentors.clientWidth + 49))
+    slideMentors.scrollLeft = 0;
+})
 
 
+const carousel = document.querySelector(".footer__m");
+const btnCarousel = document.querySelectorAll(".btnCarousel");
+
+let firstCarousel = carousel.querySelectorAll('.footerContainer')[0];
+
+btnCarousel.forEach((btn) => {
+  btn.addEventListener("click", () => {
+    let carouselWidth = firstCarousel.clientWidth + 1;
+    carousel.scrollLeft += btn.id == "Left" ? -carouselWidth : carouselWidth
+  })
+})
